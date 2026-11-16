@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🌿 AirPredict</div>
+        <span class="status">● ML Model Dashboard</span>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <p class="tag">MACHINE LEARNING PROJECT</p>
+            <h1>Air Quality Prediction</h1>
+            <p>
+                Predict Carbon Monoxide (CO) concentration
+                using our trained Polynomial Regression model.
+            </p>
+        </section>
+
+        <section class="dashboard">
+
+            <div class="form-card">
+
+                <h2>Sensor Input Parameters</h2>
+                <p class="description">
+                    Enter the sensor readings below.
+                </p>
+
+                <form id="predictionForm">
+
+                    <div class="input-grid">
+
+                        <div class="input-group">
+                            <label>PT08.S1(CO)</label>
+                            <input type="number" name="PT08.S1(CO)"
+                            value="1360" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>C6H6(GT)</label>
+                            <input type="number" name="C6H6(GT)"
+                            value="11.5" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>PT08.S2(NMHC)</label>
+                            <input type="number" name="PT08.S2(NMHC)"
+                            value="1045" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>NOx(GT)</label>
+                            <input type="number" name="NOx(GT)"
+                            value="180" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>PT08.S3(NOx)</label>
+                            <input type="number" name="PT08.S3(NOx)"
+                            value="900" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>NO2(GT)</label>
+                            <input type="number" name="NO2(GT)"
+                            value="90" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>PT08.S4(NO2)</label>
+                            <input type="number" name="PT08.S4(NO2)"
+                            value="1500" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>PT08.S5(O3)</label>
+                            <input type="number" name="PT08.S5(O3)"
+                            value="1200" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Temperature (°C)</label>
+                            <input type="number" name="T"
+                            value="20" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Relative Humidity (%)</label>
+                            <input type="number" name="RH"
+                            value="45" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Absolute Humidity (AH)</label>
+                            <input type="number" name="AH"
+                            value="0.8" step="any" required>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" id="predictBtn">
+                        Predict CO Concentration →
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="result-card">
+
+                <div class="result-icon">🌍</div>
+
+                <h2>Prediction Result</h2>
+
+                <p class="description">
+                    Your predicted CO concentration
+                </p>
+
+                <div class="result-box">
+
+                    <span id="prediction">--</span>
+
+                    <small>CO(GT) · mg/m³</small>
+
+                </div>
+
+                <p id="message">
+                    Enter sensor values and click Predict.
+                </p>
+
+                <div class="model-info">
+                    <p>Model: Polynomial Regression</p>
+                    <p>Features: 11</p>
+                    <p>Backend: FastAPI</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        AirPredict | Machine Learning Project
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
